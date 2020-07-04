@@ -3,13 +3,13 @@
 font-family: 'Vollkorn SC', serif; */
 
 body{
-    font-family: 'Lato', sans-serif;
+    font-family: 'Lato', sans-serif !important;
     background-color: rgba(0, 0, 0, 0.769);
     color: white;
 }
 header{
     background-color: rgba(224, 219, 219, 0.925);
-    color: black;
+    /* color: black; */
     display: flex;
     justify-content: space-between;
     flex-direction: row;
@@ -17,7 +17,8 @@ header{
     align-items: center;
 }
 .title h1{
-    font-family: 'Vollkorn SC', serif;
+    font-family: 'Vollkorn SC', serif !important;
+    color: #011627;
 }
 .title h1:hover{
     color: rgba(0, 0, 0, 0.735);
@@ -35,15 +36,35 @@ nav ul li{
     margin-right: 1em;
 }
 ul li a{
-    font-family: 'Vollkorn SC', serif;
+    font-family: 'Vollkorn SC', serif !important;
     text-decoration: none;
     transition: all 0.3s ease 0;
-    color: black;
-    text-shadow: 1px 1px rgb(187, 182, 182);
+    color: #011627;
+    text-shadow: 1px 1px rgb(248, 244, 244);
 }
 ul li a:hover{
-    color: blue;
-    border-bottom: 2px blue solid;
+    color: #ff9f1c;
+    text-decoration: none;
+    border-bottom: 2px #ff9f1c solid;
+}
+.override{
+    width: 80%;
+    margin: 0 auto;
+}
+.card{
+    box-shadow: 1px 1px 5px rgba(241, 235, 235, 0.4);
+    background-color: #b9fa999e;
+    height: 30vh;
+    border-right: 2px black;
+    margin: .3em 0;
+}
+.card h1{
+    font-family: 'Vollkorn SC', serif !important;
+    color: #e71d36;
+
+}
+.card p{
+    color: #011627;
 }
 @media (max-width: 768px){
     header{
