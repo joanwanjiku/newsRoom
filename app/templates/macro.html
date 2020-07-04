@@ -1,0 +1,10 @@
+{% macro displaySource(source_list) %}
+    {% for source in source_list %}
+        <div class="col-lg-4 card">
+            <h1>{{source.name}}</h1>
+            <hr>
+            <p>{{source.description}}</p>
+
+        </div>
+    {% endfor %}
+{% endmacro %}
