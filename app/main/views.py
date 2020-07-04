@@ -1,10 +1,13 @@
 from flask import render_template
 from . import main
+from ..requests import get_sources
 
 @main.route('/')
 def index():
     title = 'Home'
-    return render_template('index.html', title=title)
+    sources = get_sources()    
+    print(sources)
+    return render_template('index.html', title=title, source= sources)
 
 @main.route('/headline')
 def headline():
