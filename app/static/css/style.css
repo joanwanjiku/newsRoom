@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Vollkorn+SC:wght@400;600;700&display=swap');
+/* font-family: 'Lato', sans-serif;
+font-family: 'Vollkorn SC', serif; */
+
+body{
+    font-family: 'Lato', sans-serif;
+    background-color: rgba(0, 0, 0, 0.769);
+    color: white;
+}
+header{
+    background-color: rgba(224, 219, 219, 0.925);
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 0 1em;
+    align-items: center;
+}
+.title h1{
+    font-family: 'Vollkorn SC', serif;
+}
+.title h1:hover{
+    color: rgba(0, 0, 0, 0.735);
+    cursor: pointer;
+    text-shadow: 1px 1px rgb(187, 182, 182);
+
+}
+nav ul{
+    display: flex;
+    padding: 1em;
+    list-style: none;
+    flex-direction: row;
+}
+nav ul li{
+    margin-right: 1em;
+}
+ul li a{
+    font-family: 'Vollkorn SC', serif;
+    text-decoration: none;
+    transition: all 0.3s ease 0;
+    color: black;
+    text-shadow: 1px 1px rgb(187, 182, 182);
+}
+ul li a:hover{
+    color: blue;
+    border-bottom: 2px blue solid;
+}
+@media (max-width: 768px){
+    header{
+        flex-direction: column;
+    }
+    nav ul{
+        flex-direction: column;
+    }
+}
