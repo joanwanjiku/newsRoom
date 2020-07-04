@@ -1,11 +1,11 @@
 {% extends 'base.html'%}
-<!-- {% block styles%}
-    {{ super() }}
-    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
-{% endblock %} -->
+{% import 'macro.html' as macro %}
 {% block content %}
+    <div class="">
+        <div class="row override">
+            {{macro.displaySource(source)}}
+        </div>
+    </div>
 
-<h1>Welcome</h1>
-<p>What</p>
 
 {% endblock %}
