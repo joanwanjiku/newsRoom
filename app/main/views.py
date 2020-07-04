@@ -6,7 +6,6 @@ from ..requests import get_sources
 def index():
     title = 'Home'
     sources = get_sources()    
-    print(sources)
     return render_template('index.html', title=title, source= sources)
 
 @main.route('/headline')
