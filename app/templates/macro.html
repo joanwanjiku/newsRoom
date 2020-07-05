@@ -4,7 +4,23 @@
             <h1>{{source.name}}</h1>
             <hr>
             <p>{{source.description}}</p>
+            <div class="card-footer">
+                <p> <a href="/headline/{{source.id}}">{{source.id}} Headlines</a></p>
+            </div>
+           
 
         </div>
     {% endfor %}
 {% endmacro %}
+{% macro displayArticleSource(article_list) %}
+    {% for article in article_list %}
+        <div class="col-lg-6 article">
+            <h3>{{article.title}}</h3>
+            <img src="{{article.urlToImage}}" alt="{{article.title}}">
+            <p>{{article.description}}</p>
+            <small>{{article.author}} | <span><a href="{{article.url}}">Open Story</a></span></small>
+            <hr>
+        </div>
+    {% endfor %}
+{% endmacro %}
+
