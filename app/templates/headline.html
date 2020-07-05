@@ -1,10 +1,36 @@
 {% extends 'base.html'%}
+{% import 'macro.html' as macro %}
 <!-- {% block styles%}
     {{ super() }}
     <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
 {% endblock %} -->
 {% block content %}
 
-<h1>Headlines</h1>
+
+<div class="container headline">
+    <h4>Search an article in the headlines </h4>
+        <div class="row">
+            <div class="col-xs-12">
+                <form action="">
+                    <input type="text" name="keyword" id="" class="form-control" placeholder="Enter a keyword" required><br>
+                    <select name="category" id="" placeholder="select a language" class="form-control" required>
+                        <option value="" selected disabled>--Select Category--</option>
+                        <option value="business">Business</option>
+                        <option value="entertainment">Entertainment</option>
+                        <option value="general">General</option>
+                        <option value="science">Science</option>
+                        <option value="technology">Technology</option>
+                        <option value="sports">Sports</option>
+
+                    </select><br>
+                    <input type="submit" value="Search" class="btn btn-info">
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <h3>{{message}}</h3>
+            {{ macro.displayArticleSource(searched_articles) }}
+        </div>
+</div>
 
 {% endblock %}
