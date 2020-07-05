@@ -1,6 +1,6 @@
 import urllib.request
 import json
-from .models import Source
+from .models import Source, Article
 from .main import main
 
 api_key = None
@@ -25,6 +25,32 @@ def get_sources():
             results= process_response(sources_response['sources'])
     return results
 
+def get_leading_articles_by_source(source):
+
+    get_articles_url = 'https://newsapi.org/v2/top-headlines?sources=%s&apiKey=%s' % (source, api_key)
+    with urllib.request.urlopen(get_articles_url) as url:
+        article_data = url.read()
+        article_response = json.loads(article_data)
+
+        results = None
+        if article_response['totalResults'] > 0:
+            results = process_article_response(article_response['articles'])
+    return results
+
+def process_article_response(articles):
+    results_list = []
+
+    for article_item in articles:
+        author = article_item.get('author')
+        title = article_item.get('title')
+        desc = article_item.get('description')
+        image = article_item.get('urlToImage')
+        url = article_item.get('url')
+
+        article_object = Article(author, title, desc, image, url)
+        results_list.append(article_object)
+    return results_list
+    
 def process_response(response):
     results_list = []
 
