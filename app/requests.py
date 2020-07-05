@@ -48,7 +48,21 @@ def search_article_keyword(keyword, language):
             response_list = articles_response['articles'][0:15]
             results = process_article_response(response_list)
     return results
-    
+
+def search_headline_article(keyword, category):
+    get_articles_url = 'https://newsapi.org/v2/top-headlines?apiKey=%s&category=%s&q=%s' %(api_key, category, keyword)
+    with urllib.request.urlopen(get_articles_url) as url:
+        articles_data = url.read()
+        articles_response = json.loads(articles_data)
+
+        results = None
+        if articles_response['totalResults'] > 0:
+            if articles_response['totalResults'] > 20:
+                results = process_article_response(articles_response['articles'][0:20])
+            else:
+                results = process_article_response(articles_response['articles'])
+    return  results
+
 
 
 def process_article_response(articles):
@@ -60,8 +74,9 @@ def process_article_response(articles):
         desc = article_item.get('description')
         image = article_item.get('urlToImage')
         url = article_item.get('url')
+        source = article_item.get('source')['name']
 
-        article_object = Article(author, title, desc, image, url)
+        article_object = Article(author, title, desc, image, url, source)
         results_list.append(article_object)
     return results_list
     
