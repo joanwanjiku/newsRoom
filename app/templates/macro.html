@@ -5,7 +5,7 @@
             <hr>
             <p>{{source.description}}</p>
             <div class="card-footer">
-                <p> <a href="/headline/{{source.id}}" class="btn btn-default" style="color: #2ec4b6;">{{source.name}} Headlines</a></p>
+                <p> <a href="/headline/{{source.id}}" class="btn btn-info" style="color:black;">{{source.name}} Headlines</a></p>
             </div>
            
 
@@ -18,7 +18,7 @@
             <h3>{{article.title}}</h3>
             <img src="{{article.urlToImage}}" alt="{{article.title}}">
             <p>{{article.description}}</p>
-            <small>{{article.author}} | <span><a href="{{article.url}}">Open Story</a></span></small>
+            <small>{{article.author}} |   {{article.source}} | <span><a href="{{article.url}}" style="font-weight: bold; font-size: 1.5rem">Open Story</a></span></small>
             <hr>
         </div>
     {% endfor %}
