@@ -1,10 +1,30 @@
 {% extends 'base.html'%}
+{% import 'macro.html' as macro %}
 <!-- {% block styles%}
     {{ super() }}
     <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
 {% endblock %} -->
 {% block content %}
+<div class="container every">
 
-<h1>Everything</h1>
+    <h4>Search for a random article </h4>
+        <div class="row">
+            <div class="col-xs-12">
+                <form action="">
+                    <input type="text" name="keyword" id="" class="form-control" placeholder="Enter the keyword in the title" required><br>
+                    <select name="language" id="" placeholder="select a language" class="form-control" required>
+                        <option value="" selected disabled>--Select Language--</option>
+                        <option value="en">English</option>
+                        <option value="fr">French</option>
+                    </select><br>
+                    <input type="submit" value="Search" class="btn btn-info">
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <h3>{{message}}</h3>
+            {{ macro.displayArticleSource(searched_articles) }}
+        </div>
+    </div>
 
 {% endblock %}
