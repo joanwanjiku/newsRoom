@@ -37,6 +37,20 @@ def get_leading_articles_by_source(source):
             results = process_article_response(article_response['articles'])
     return results
 
+def search_article_keyword(keyword, language):
+    get_articles_url = 'https://newsapi.org/v2/everything?language=%s&apiKey=%s&qInTitle="%s"' %(language, api_key, keyword)
+    with urllib.request.urlopen(get_articles_url) as url:
+        articles_data = url.read()
+        articles_response = json.loads(articles_data)
+
+        results = None
+        if articles_response['totalResults'] > 0:
+            response_list = articles_response['articles'][0:15]
+            results = process_article_response(response_list)
+    return results
+    
+
+
 def process_article_response(articles):
     results_list = []
 
