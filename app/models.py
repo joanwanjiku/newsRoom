@@ -12,3 +12,18 @@ class Source:
 
     def save_source(self):
         self.all_sources.append(self)
+
+class Article:
+    
+    all_articles = []
+
+    def __init__(self, author, title, desc, urlImg, urlArt):
+
+        self.author = author
+        self.title = title
+        self.description = desc
+        self.urlToImage = urlImg
+        self.url = urlArt
+
+    def save_article(self):
+        self.all_articles.append(self)
