@@ -17,13 +17,14 @@ class Article:
     
     all_articles = []
 
-    def __init__(self, author, title, desc, urlImg, urlArt):
+    def __init__(self, author, title, desc, urlImg, urlArt, source):
 
         self.author = author
         self.title = title
         self.description = desc
         self.urlToImage = urlImg
         self.url = urlArt
+        self.source = source
 
     def save_article(self):
         self.all_articles.append(self)

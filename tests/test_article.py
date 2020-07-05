@@ -1,6 +1,7 @@
 import unittest
 from app.models import Article
 
+
 class ArticleTest(unittest.TestCase):
 
     """
@@ -13,7 +14,7 @@ class ArticleTest(unittest.TestCase):
         self.new_article = Article('bbc news', 'Two hurt as car strikes protest in Seattle', 
         'The women are seriously injured as the vehicle careers into protesters on a closed highway', 
         'https://ichef.bbci.co.uk/news/1024/branded_news/8600/production/_113240343_gettyimages-1223820095.jpg',
-        '"http://www.bbc.co.uk/news/world-us-canada-53291289',
+        '"http://www.bbc.co.uk/news/world-us-canada-53291289', 'bbc'
         )
         
     def test_init(self):
