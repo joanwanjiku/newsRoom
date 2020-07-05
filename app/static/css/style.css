@@ -7,6 +7,11 @@ body{
     background-color: rgba(0, 0, 0, 0.769);
     color: white;
 }
+h3{
+    text-align: center; 
+    font-family: 'Vollkorn SC', serif !important;
+    color: #ff9f1c; 
+}
 header{
     background-color: rgba(224, 219, 219, 0.925);
     /* color: black; */
@@ -66,7 +71,7 @@ ul li a:hover{
     color: #011627;
 }
 .article{
-    height: 60vh;
+    height: 70vh;
 }
 .article h3{
     color: #e71d36;
@@ -79,6 +84,11 @@ ul li a:hover{
 }
 .article small{
     color: #ff9f1c;
+}
+.every h4{
+    text-align: center; 
+    font-family: 'Vollkorn SC', serif !important;
+    color: #e71d36;
 }
 @media (max-width: 768px){
     header{
